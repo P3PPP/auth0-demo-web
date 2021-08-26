@@ -20,7 +20,7 @@ namespace SampleMvcApp
             {
                 var settings = config.Build();
                 
-                var connection = settings.GetConnectionString("AppConfig");
+                var connection = Environment.GetEnvironmentVariable("AppConfigConnectionString");
                 if (!string.IsNullOrEmpty(connection))
                 {
                     config.AddAzureAppConfiguration(connection);
